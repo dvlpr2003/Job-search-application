@@ -19,7 +19,7 @@ const passport = require("passport");
 
 const app = express();
 
-const PORT = 4000;
+const PORT = 3000;
 const DB_NAME = "JobsPlanet"
 
 // Passport middleware
@@ -34,7 +34,8 @@ var JobRouter = require("./routes/job.routes");
 var ApplicationRouter = require("./routes/application.routes");
 
 app.use(cors({
-    origin:"https://h-aglx.onrender.com"
+    origin:"https://h-aglx.onrender.com",
+    credentials:true
     
 }
 

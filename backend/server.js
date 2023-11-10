@@ -1,5 +1,9 @@
 const express = require('express');
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods:POST,GET,OPTIONS,PUT,DELETE');
+header('Access-Control-Allow-Headers: Content-Type,X-Auth-Token,Origin,Authorization');
+
 // Middleware is a software that acts as an intermediary between 
 // two applications or services to facilitate their communication.
 // body-parser gets data from body

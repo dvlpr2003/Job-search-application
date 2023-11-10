@@ -21,7 +21,7 @@ class Dashboard extends Component {
 
     componentDidMount() {
         const { user } = this.props.auth;
-        axios.get('http://localhost:4000/user/'+ user.id)
+        axios.get('https://job-search-application-api.vercel.app/'+ user.id)
              .then(response => {
                  this.setState({userdetails: response.data});
              })

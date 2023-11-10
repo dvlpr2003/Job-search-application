@@ -43,7 +43,7 @@ class Register extends Component {
         e.preventDefault();
         console.log(this.state.skills);
         if(this.state.role === "applicant" && this.state.skills !== "" && this.state.skills.length !== 0)
-            this.state.skills = this.state.skills.split(',');
+            this.state.skills = this.state.skills.toString().split(',');
         const newUser = {
             name: this.state.name,
             email: this.state.email,

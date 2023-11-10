@@ -42,7 +42,7 @@ class CreateJob extends Component {
 
     componentDidMount() {
         const { user } = this.props.auth;
-        axios.get('http://localhost:4000/user/'+ user.id)
+        axios.get('https://job-search-application-api.vercel.app/user/'+ user.id)
              .then(response => {
                  this.setState({userdetails: response.data});
              })
@@ -141,7 +141,7 @@ class CreateJob extends Component {
         const isValid = this.validate();
         if (isValid) {
             axios
-                .post('http://localhost:4000/job/add_job', newJob)
+                .post('https://job-search-application-api.vercel.app/job/add_job', newJob)
                 .then(response => {
                     console.log(newJob);
                     alert("Job added successfully!");

@@ -130,21 +130,21 @@ class JobsList extends Component {
     componentDidMount() {
         const { user } = this.props.auth;
         this.setState({ showform : false });
-        axios.get('http://localhost:4000/user/'+ user.id)
+        axios.get('https://job-search-application-api.vercel.app/user/'+ user.id)
                 .then(response => {
                     this.setState({userdetails: response.data});
                 })
                 .catch(function(error) {
                     console.log(error);
                 })
-        axios.get('http://localhost:4000/job/get_jobs')
+        axios.get('https://job-search-application-api.vercel.app/job/get_jobs')
             .then(response => {
                 this.setState({jobs: response.data, extraJobs:response.data});
             })
             .catch(function(error) {
                 console.log(error);
             })
-        axios.get('http://localhost:4000/application/get_applications')
+        axios.get('https://job-search-application-api.vercel.app/application/get_applications')
             .then(response => {
                 this.setState({applications: response.data});
             })
@@ -324,7 +324,7 @@ class JobsList extends Component {
         if(num <= 250 && this.state.userdetails.numapp <= 10)
         {
             axios
-                .post('http://localhost:4000/application/add_application', newApplication)
+                .post('https://job-search-application-api.vercel.app/application/add_application', newApplication)
                 .then(response => {
                     console.log(newApplication);
                     alert("Application sent successfully!");
@@ -334,7 +334,7 @@ class JobsList extends Component {
                     alert("Application could not be sent.");
                 })
             axios
-                .put('http://localhost:4000/job/edit_job/' + job._id, editJob)
+                .put('https://job-search-application-api.vercel.app/job/edit_job/' + job._id, editJob)
                 .then(response => {
                     console.log(editJob);
                 })
@@ -342,7 +342,7 @@ class JobsList extends Component {
                     console.log(error);
                 })
             axios
-                .put('http://localhost:4000/user/edit_profile/' + user.id, editApplicant)
+                .put('https://job-search-application-api.vercel.app/user/edit_profile/' + user.id, editApplicant)
                 .then(response => {
                     console.log(editApplicant);
                 })

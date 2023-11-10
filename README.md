@@ -50,9 +50,4 @@ The project budget is limited to [specified budget].
 The project timeline is [specified timeline].
 6. Conclusion
 This Software Requirements Specification outlines the functional and non-functional requirements for the Job Search Application. The successful implementation of these requirements will result in a user-friendly and efficient job search platform that benefits both job seekers and employers.
-
-[Sign-off]
-
-[Your Name], Project Manager
-[Date]
 This is a high-level overview of an SRS for a job search application. Depending on the complexity of the application and the specific needs of your project, you may need to provide more detailed specifications and documentation.

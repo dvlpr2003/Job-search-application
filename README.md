@@ -1,6 +1,9 @@
 # Job-search-application
 Job Search Application Software Requirements Specification
 1. Introduction
+
+
+
 1.1 Purpose
 The purpose of this Software Requirements Specification (SRS) is to define the requirements for a Job Search Application, which aims to provide a user-friendly platform for job seekers to search for job listings and for employers to post job openings.
 

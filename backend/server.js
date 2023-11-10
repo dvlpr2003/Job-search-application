@@ -37,6 +37,21 @@ app.use(cors(
 
 
 ));
+// fun
+app.use((req,res, next)=>{
+    res.header('Access-Control-Allow-Origin','*');
+    res.header(
+        'Access-Control-Allow-Headers','Origin ,X-Requested-With,Content-Type, Access,Authorization'
+    );
+
+    if(req.Method==='OPTIONS'){
+        req.header('Access-Control-Allow-Methods','POST,PUT,PUSH,PATCH,DELETE,GET');
+        return res.status(200).json({})
+    }
+
+    next()
+})
+// fun
 // Body-Parser Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -52,7 +52,7 @@ class AppList extends Component {
 
     componentDidMount() {
         const { user } = this.props.auth;
-        axios.get('http://localhost:4000/user/'+ user.id)
+        axios.get('https://job-search-application-api.vercel.app/user/'+ user.id)
                 .then(response => {
                     this.setState({userdetails: response.data});
                 })
@@ -248,7 +248,7 @@ class AppList extends Component {
                     //     numapp: newNumApp
                     // }
                     axios
-                        .put('http://localhost:4000/application/edit_application/' + appli._id, tempAppli)
+                        .put('https://job-search-application-api.vercel.app/application/edit_application/' + appli._id, tempAppli)
                         .then(response => {
                             console.log(tempAppli);
                         })
@@ -321,7 +321,7 @@ class AppList extends Component {
                 //     numapp: napp
                 // }
                 axios
-                    .put('http://localhost:4000/application/edit_application/' + appli._id, editAppli)
+                    .put('https://job-search-application-api.vercel.app/application/edit_application/' + appli._id, editAppli)
                     .then(response => {
                         console.log(editAppli);
                     })

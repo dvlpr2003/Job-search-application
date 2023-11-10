@@ -59,21 +59,21 @@ class AppList extends Component {
                 .catch(function(error) {
                     console.log(error);
                 })
-        axios.get('http://localhost:4000/job/get_jobs')
+        axios.get('https://job-search-application-api.vercel.app/job/get_jobs')
             .then(response => {
                 this.setState({jobs: response.data});
             })
             .catch(function(error) {
                 console.log(error);
             })
-        axios.get('http://localhost:4000/user/')
+        axios.get('https://job-search-application-api.vercel.app/user/')
             .then(response => {
                 this.setState({users: response.data});
             })
             .catch(function(error) {
                 console.log(error);
             })
-        axios.get('http://localhost:4000/application/get_applications')
+        axios.get('https://job-search-application-api.vercel.app/application/get_applications')
             .then(response => {
                 this.setState({applications: response.data});
             })
@@ -216,7 +216,7 @@ class AppList extends Component {
         };
 
         axios
-            .put('http://localhost:4000/application/edit_application/' + application._id, editApplication)
+            .put('https://job-search-application-api.vercel.app/application/edit_application/' + application._id, editApplication)
             .then(response => {
                 console.log(editApplication);
             })
@@ -282,7 +282,7 @@ class AppList extends Component {
         };
 
         axios
-            .put('http://localhost:4000/job/edit_job/' + job._id, editJob)
+            .put('https://job-search-application-api.vercel.app/job/edit_job/' + job._id, editJob)
             .then(response => {
                 console.log(editJob);
             })
@@ -291,7 +291,7 @@ class AppList extends Component {
             })
 
         axios
-            .put('http://localhost:4000/application/edit_application/' + application._id, editApplication)
+            .put('https://job-search-application-api.vercel.app/application/edit_application/' + application._id, editApplication)
             .then(response => {
                 console.log(editApplication);
             })
@@ -300,7 +300,7 @@ class AppList extends Component {
             })
         
         axios
-            .put('http://localhost:4000/user/edit_profile/' + application.applicantId, editApplicant)
+            .put('https://job-search-application-api.vercel.app/user/edit_profile/' + application.applicantId, editApplicant)
             .then(response => {
                 console.log(editApplicant);
             })
@@ -367,7 +367,7 @@ class AppList extends Component {
         // };
 
         axios
-            .put('http://localhost:4000/application/edit_application/' + application._id, editApplication)
+            .put('https://job-search-application-api.vercel.app/application/edit_application/' + application._id, editApplication)
             .then(response => {
                 console.log(editApplication);
             })
@@ -385,7 +385,7 @@ class AppList extends Component {
         //     })
         
         axios
-            .put('http://localhost:4000/user/edit_profile/' + application.applicantId, editApplicant)
+            .put('https://job-search-application-api.vercel.app/user/edit_profile/' + application.applicantId, editApplicant)
             .then(response => {
                 console.log(editApplicant);
             })

@@ -12,11 +12,11 @@ export const registerUser = (userData, history) => dispatch => {
     axios
         .post("https://job-search-application-api.vercel.app/user/register", userData)
         .then(res => alert("User registered successfully! You can log in now. "),history.push("/login")) // re-direct to login on successful register
-        .catch(err =>
-            dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data,
-            })
+        // .catch(err =>
+        //     dispatch({
+        //         type: GET_ERRORS,
+        //         payload: err.response.data,
+        //     })
     );
 };
 

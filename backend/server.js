@@ -34,7 +34,7 @@ var JobRouter = require("./routes/job.routes");
 var ApplicationRouter = require("./routes/application.routes");
 
 app.use(cors(
-    origin:["https://h-aglx.onrender.com"],
+
 
 ));
 // Body-Parser Middleware

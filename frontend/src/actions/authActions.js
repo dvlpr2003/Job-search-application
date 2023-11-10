@@ -10,7 +10,7 @@ import {
 // Register User
 export const registerUser = (userData, history) => dispatch => {
     axios
-        .post("http://localhost:4000/user/register", userData)
+        .post("https://job-search-application-api.vercel.app/user/register", userData)
         .then(res => alert("User registered successfully! You can log in now. "),history.push("/register")) // re-direct to login on successful register
         .catch(err =>
             dispatch({
@@ -23,7 +23,7 @@ export const registerUser = (userData, history) => dispatch => {
 // Login - get user token
 export const loginUser = userData => dispatch => {
     axios
-    .post("http://localhost:4000/user/login", userData)
+    .post("https://job-search-application-api.vercel.app/user/login", userData)
     .then(res => {
         // Save to localStorage
         // Set token to localStorage

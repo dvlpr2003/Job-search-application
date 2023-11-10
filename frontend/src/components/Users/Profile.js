@@ -38,7 +38,7 @@ class Profile extends Component {
 
     componentDidMount() {
         const { user } = this.props.auth;
-        axios.get('http://localhost:4000/user/'+ user.id)
+        axios.get('hhttps://job-search-application-api.vercel.app/user/'+ user.id)
              .then(response => {
                  this.setState({userdetails: response.data});
              })
@@ -52,7 +52,7 @@ class Profile extends Component {
         const idToRemove = ed._id;
         this.state.userdetails.education = this.state.userdetails.education.filter((item) => item._id !== idToRemove);
         axios
-            .put('http://localhost:4000/user/edit_profile/' + user.id, this.state.userdetails)
+            .put('https://job-search-application-api.vercel.app/user/edit_profile/' + user.id, this.state.userdetails)
             .then(response => {
                 console.log(this.state.userdetails);
             })
@@ -114,7 +114,7 @@ class Profile extends Component {
         else {
             this.state.userdetails.education[ind].enddate = this.state.enddate;
             axios
-                .put('http://localhost:4000/user/edit_profile/' + user.id, this.state.userdetails)
+                .put('https://job-search-application-api.vercel.app/user/edit_profile/' + user.id, this.state.userdetails)
                 .then(response => {
                     console.log(this.state.userdetails);
                 })

@@ -22,7 +22,7 @@ class UsersList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/user')
+        axios.get('https://job-search-application-api.vercel.app/user')
              .then(response => {
                  this.setState({users: response.data, sortedUsers:response.data});
              })

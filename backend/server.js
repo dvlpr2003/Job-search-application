@@ -68,7 +68,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
 // To localhost
-mongoose.connect('mongodb+srv://dvlpr2003:<WLRSxEEuD92nc13t>@cluster0.fmrgmxo.mongodb.net/' + DB_NAME, { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://dvlpr2003:<WLRSxEEuD92nc13t>@cluster0.fmrgmxo.mongodb.net/{DB_NAME}?retryWrites=true&w=majority');
 const connection = mongoose.connection;
 connection.once('open', function() {
     console.log("MongoDB database connection established successfully !");

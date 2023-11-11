@@ -1,8 +1,8 @@
 const express = require('express');
 
-header('Access-Control-Allow-Origin:https://h-aglx.onrender.com",');
-header('Access-Control-Allow-Methods:POST,GET,OPTIONS,PUT,DELETE');
-header('Access-Control-Allow-Headers: Content-Type,X-Auth-Token,Origin,Authorization');
+// header('Access-Control-Allow-Origin:https://h-aglx.onrender.com",');
+// header('Access-Control-Allow-Methods:POST,GET,OPTIONS,PUT,DELETE');
+// header('Access-Control-Allow-Headers: Content-Type,X-Auth-Token,Origin,Authorization');
 
 // Middleware is a software that acts as an intermediary between 
 // two applications or services to facilitate their communication.
@@ -37,16 +37,16 @@ var UserRouter = require("./routes/users.routes");
 var JobRouter = require("./routes/job.routes");
 var ApplicationRouter = require("./routes/application.routes");
 
-app.use(cors(
-    {
-    origin:["https://h-aglx.onrender.com"],
-    methods:["POST","GET"],
-    credentials:true
+// app.use(cors(
+//     {
+//     origin:["https://h-aglx.onrender.com"],
+//     methods:["POST","GET"],
+//     credentials:true
     
-}
+// }
 
 
-));
+// ));
 // fun
 // app.use((req,res, next)=>{
 //     res.header('Access-Control-Allow-Origin','*');

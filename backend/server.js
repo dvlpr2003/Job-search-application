@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 // cross origin resource sharing: enables scripts running on a 
 // browser client to interact with resources from a different origin/domain
 // which is otherwise blocked by same origin policy for Js
-const cors = require('cors');
+// const cors = require('cors');
 
 // mongoose: Object Data Modeling (ODM) library for MongoDB and Node.js
 // manages relationships between data, provides schema validation, 

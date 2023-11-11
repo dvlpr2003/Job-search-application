@@ -73,7 +73,10 @@ const connection = mongoose.connection;
 connection.once('open', function() {
     console.log("MongoDB database connection established successfully !");
 })
-
+// demo output
+app.get("/",(req,res)=> {
+    res.json("Hello");
+})
 // setup API endpoints
 app.use("/testAPI", testAPIRouter);
 app.use("/user", UserRouter);

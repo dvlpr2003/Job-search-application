@@ -1,97 +1,87 @@
-// const express = require('express');
+const express = require('express');
 
-// // header('Access-Control-Allow-Origin:https://h-aglx.onrender.com",');
-// // header('Access-Control-Allow-Methods:POST,GET,OPTIONS,PUT,DELETE');
-// // header('Access-Control-Allow-Headers: Content-Type,X-Auth-Token,Origin,Authorization');
-
-
-// const bodyParser = require('body-parser');
-
-// // cross origin resource sharing: enables scripts running on a 
-// // browser client to interact with resources from a different origin/domain
-// // which is otherwise blocked by same origin policy for Js
-// // const cors = require('cors');
-
-// // mongoose: Object Data Modeling (ODM) library for MongoDB and Node.js
-// // manages relationships between data, provides schema validation, 
-// // translate between objects in code and the representation of those objects in MongoDB
-// // const mongoose = require('mongoose');
-
-// const passport = require("passport");
-
-// const app = express();
-
-// const PORT = 3000;
-// const DB_NAME = "JobsPlanet"
-
-// // Passport middleware
-// app.use(passport.initialize());
-// // Passport config
-// require("./config/passport")(passport);
-
-// // routes
-// var testAPIRouter = require("./routes/testAPI");
-// var UserRouter = require("./routes/users.routes");
-// var JobRouter = require("./routes/job.routes");
-// var ApplicationRouter = require("./routes/application.routes");
-
-// // app.use(cors(
-// //     {
-// //     origin:["https://h-aglx.onrender.com"],
-// //     methods:["POST","GET"],
-// //     credentials:true
-    
-// // }
+header('Access-Control-Allow-Origin:https://h-aglx.onrender.com",');
+header('Access-Control-Allow-Methods:POST,GET,OPTIONS,PUT,DELETE');
+header('Access-Control-Allow-Headers: Content-Type,X-Auth-Token,Origin,Authorization');
 
 
-// // ));
-// // fun
-// // app.use((req,res, next)=>{
-// //     res.header('Access-Control-Allow-Origin','*');
-// //     res.header(
-// //         'Access-Control-Allow-Headers','Origin ,X-Requested-With,Content-Type, Access,Authorization'
-// //     );
+const bodyParser = require('body-parser');
 
-// //     if(req.Method==='OPTIONS'){
-// //         req.header('Access-Control-Allow-Methods','POST,PUT,PUSH,PATCH,DELETE,GET');
-// //         return res.status(200).json({})
-// //     }
+// cross origin resource sharing: enables scripts running on a 
+// browser client to interact with resources from a different origin/domain
+// which is otherwise blocked by same origin policy for Js
+const cors = require('cors');
 
-// //     next()
-// // })
-// // fun
-// // Body-Parser Middleware
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
+// mongoose: Object Data Modeling (ODM) library for MongoDB and Node.js
+// manages relationships between data, provides schema validation, 
+// translate between objects in code and the representation of those objects in MongoDB
+const mongoose = require('mongoose');
 
-// // Connect to MongoDB
-// // To localhost
-// // mongoose.connect('mongodb+srv://dvlpr2003:<WLRSxEEuD92nc13t>@cluster0.fmrgmxo.mongodb.net/{DB_NAME}?retryWrites=true&w=majority');
-// // const connection = mongoose.connection;
-// // connection.once('open', function() {
-// //     console.log("MongoDB database connection established successfully !");
-// // })
-// // demo output
-// app.get("/",(req,res)=> {
-//     res.json("Hello");
-// })
-// // setup API endpoints
-// app.use("/testAPI", testAPIRouter);
-// app.use("/user", UserRouter);
-// app.use("/job", JobRouter);
-// app.use("/application", ApplicationRouter);
+const passport = require("passport");
 
-// app.listen(PORT, function() {
-//     console.log("Server is running on Port: " + PORT);
-// });
-
-import express from "express";
 const app = express();
-const port = 900;
-app.use("/", (req, res) => {
-  res.json({ message: "Hello From express App" });
-});
-app.listen(900, () => {
-  console.log("Starting server on port 9000");
+
+const PORT = 3000;
+const DB_NAME = "JobsPlanet"
+
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
+
+// routes
+var testAPIRouter = require("./routes/testAPI");
+var UserRouter = require("./routes/users.routes");
+var JobRouter = require("./routes/job.routes");
+var ApplicationRouter = require("./routes/application.routes");
+
+app.use(cors(
+    {
+    origin:["https://h-aglx.onrender.com"],
+    methods:["POST","GET"],
+    credentials:true
+    
+}
+
+
+// ));
+// fun
+// app.use((req,res, next)=>{
+//     res.header('Access-Control-Allow-Origin','*');
+//     res.header(
+//         'Access-Control-Allow-Headers','Origin ,X-Requested-With,Content-Type, Access,Authorization'
+//     );
+
+//     if(req.Method==='OPTIONS'){
+//         req.header('Access-Control-Allow-Methods','POST,PUT,PUSH,PATCH,DELETE,GET');
+//         return res.status(200).json({})
+//     }
+
+//     next()
+// })
+// fun
+// Body-Parser Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Connect to MongoDB
+// To localhost
+mongoose.connect('mongodb+srv://dvlpr2003:<WLRSxEEuD92nc13t>@cluster0.fmrgmxo.mongodb.net/{DB_NAME}?retryWrites=true&w=majority');
+const connection = mongoose.connection;
+connection.once('open', function() {
+    console.log("MongoDB database connection established successfully !");
+})
+// demo output
+app.get("/",(req,res)=> {
+    res.json("Hello");
+})
+// setup API endpoints
+app.use("/testAPI", testAPIRouter);
+app.use("/user", UserRouter);
+app.use("/job", JobRouter);
+app.use("/application", ApplicationRouter);
+
+app.listen(PORT, function() {
+    console.log("Server is running on Port: " + PORT);
 });
 

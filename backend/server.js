@@ -17,7 +17,7 @@ const cors = require('cors');
 // mongoose: Object Data Modeling (ODM) library for MongoDB and Node.js
 // manages relationships between data, provides schema validation, 
 // translate between objects in code and the representation of those objects in MongoDB
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 const passport = require("passport");
 
@@ -68,11 +68,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
 // To localhost
-mongoose.connect('mongodb+srv://dvlpr2003:<WLRSxEEuD92nc13t>@cluster0.fmrgmxo.mongodb.net/{DB_NAME}?retryWrites=true&w=majority');
-const connection = mongoose.connection;
-connection.once('open', function() {
-    console.log("MongoDB database connection established successfully !");
-})
+// mongoose.connect('mongodb+srv://dvlpr2003:<WLRSxEEuD92nc13t>@cluster0.fmrgmxo.mongodb.net/{DB_NAME}?retryWrites=true&w=majority');
+// const connection = mongoose.connection;
+// connection.once('open', function() {
+//     console.log("MongoDB database connection established successfully !");
+// })
 // demo output
 app.get("/",(req,res)=> {
     res.json("Hello");
